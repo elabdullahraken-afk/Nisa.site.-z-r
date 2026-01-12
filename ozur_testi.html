@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Sana Bir Şey Göstermek İstiyorum</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#fbc2eb,#a6c1ee);
+    margin:0;
+    padding:20px;
+}
+.card{
+    background:white;
+    max-width:500px;
+    margin:auto;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+h1,h2{
+    text-align:center;
+    color:#e63946;
+}
+.question{
+    margin-bottom:20px;
+}
+button{
+    width:100%;
+    padding:12px;
+    background:#e63946;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+}
+button:hover{
+    background:#d62839;
+}
+.hidden{
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="quiz">
+    <h1>Mini Test ❤️</h1>
+
+    <div class="question">
+        <p>1. İlk tanıştığımız günü hatırlıyor musun?</p>
+        <input type="radio" name="q1"> Evet<br>
+        <input type="radio" name="q1"> Hayır
+    </div>
+
+    <div class="question">
+        <p>2. En sevdiğin halini biliyor muyum?</p>
+        <input type="radio" name="q2"> Evet<br>
+        <input type="radio" name="q2"> Hayır
+    </div>
+
+    <div class="question">
+        <p>3. Küçük detaylara önem verir miyim?</p>
+        <input type="radio" name="q3"> Evet<br>
+        <input type="radio" name="q3"> Hayır
+    </div>
+
+    <button onclick="finishTest()">Testi Bitir</button>
+</div>
+
+<div class="card hidden" id="result">
+    <h2>Test Sonucu</h2>
+    <p>
+        Bu testin bir puanı yok.<br><br>
+        Çünkü ben hiçbir şeyi unutmadım.<br>
+        Ne seni, ne hissettiklerimi, ne de yaşadıklarımızı.
+    </p>
+    <button onclick="showMessage()">Devam Et</button>
+</div>
+
+<div class="card hidden" id="message">
+    <h2>Son Sözüm</h2>
+    <p>
+        Bu bir oyun değil…  
+        Bu, kalbimin hâlâ burada olduğunun kanıtı.  
+        Ayrıysak da, karışıksak da…  
+        Ben seni hiç bırakmadım.
+    </p>
+</div>
+
+<script>
+function finishTest(){
+    document.getElementById("quiz").classList.add("hidden");
+    document.getElementById("result").classList.remove("hidden");
+}
+function showMessage(){
+    document.getElementById("result").classList.add("hidden");
+    document.getElementById("message").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
