@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Sana Özel</title>
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#fbc2eb,#a6c1ee);
+    margin:0;
+    padding:20px;
+}
+.card{
+    background:white;
+    max-width:600px;
+    margin:40px auto;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+h1,h2{
+    text-align:center;
+    color:#e63946;
+}
+p{
+    line-height:1.7;
+    color:#333;
+}
+button{
+    width:100%;
+    padding:12px;
+    background:#e63946;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:15px;
+}
+button:hover{background:#d62839;}
+.hidden{display:none;}
+.music{
+    text-align:center;
+    margin-top:30px;
+}
+input{
+    width:100%;
+    padding:10px;
+    font-size:16px;
+}
+</style>
+</head>
+<body>
+
+<div class="card" id="intro">
+<h1>Bir Not</h1>
+<p>
+Hayatıma kattığın her şey için teşekkür ederim.<br><br>
+Bu, bir barışma isteğinden ziyade; kendimi son kez, doğru şekilde anlatabilmek için yaptığım ve sana özel hazırladığım bir site.<br><br>
+Evet, ben yaptım. Kurmak istediğim iş de yazılım üzerineydi. Sana anlatmadım çünkü seni daha fazla işle boğmak istemedim. Bir şeyleri anlattığımda hevesimin kaçtığını biliyorsun.<br><br>
+Ayrıldığımızdan beri ofisteydim, yazılım öğrenmeye başladım. Bu site benim ilk projem oldu.<br><br>
+Şimdi devamında küçük bir şey var.
+</p>
+<button onclick="next('intro','poem-question')">Devam et</button>
+</div>
+
+<div class="card hidden" id="poem-question">
+<h2>Küçük Bir Hatırlatma</h2>
+<p>
+Gizemli bir Şubat akşamı,<br>
+gülüşün bana <b>_____</b> fısıldar
+</p>
+<input type="text" placeholder="Kelimeyi yaz">
+<button onclick="next('poem-question','poem')">Devam et</button>
+</div>
+
+<div class="card hidden" id="poem">
+<h2>Yazdığım Şiir</h2>
+<p>
+Gizemli bir Şubat akşamı,<br>
+gülüşün bana aşkı fısıldar,<br>
+bir bahar günü serinliğinde<br>
+yüreğim hep seni fısıldar;<br><br>
+
+laleler açar gibi içimde,<br>
+seninle var olurum.<br>
+Kışın en soğuk gecesinde<br>
+Seni düşlerim içimde<br>
+öylece var olurum
+</p>
+<button onclick="next('poem','final')">Devam et</button>
+</div>
+
+<div class="card hidden" id="final">
+<h2>Son</h2>
+<p>
+Bu yazdıklarım bir savunma değil.<br>
+Sadece içimde kalanları, doğru bir şekilde bırakmak istedim.<br><br>
+Cevap vermek zorunda değilsin.<br>
+Okuman benim için yeterliydi.
+</p>
+
+<div class="music">
+<p><b>İstersen dinleyebilirsin</b></p>
+<iframe width="100%" height="80"
+src="https://www.youtube.com/embed/0w3pQ1E6PqE"
+title="Ay Tenli Kadın"
+frameborder="0"
+allow="encrypted-media"
+allowfullscreen></iframe>
+</div>
+</div>
+
+<script>
+function next(hide,show){
+    document.getElementById(hide).classList.add("hidden");
+    document.getElementById(show).classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
